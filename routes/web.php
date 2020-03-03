@@ -25,4 +25,3 @@ Route::get('/about', 'PagesController@about');
 
 Route::get('/mahasiswa', 'MahasiswaController@index');
 
-//menit 38.00
