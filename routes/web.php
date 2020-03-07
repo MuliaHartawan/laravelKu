@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,5 +27,10 @@ Route::get('/about', 'PagesController@about');
 
 Route::get('/mahasiswa', 'MahasiswaController@index');
 
-Route::get('/students', 'StudentsController@index');
+Route::get('/students', 'StudentsController@index')->name('students');
+Route::get('/students/create', 'StudentsController@create');
+Route::get('/students/{student}', 'StudentsController@show');
+Route::post('/students/store', 'StudentsController@store')->name('student-store');
+Route::get('/students/edit', 'StudentsController@edit')->name('student-edit');
+
 
