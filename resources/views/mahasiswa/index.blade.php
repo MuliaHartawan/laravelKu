@@ -1,28 +1,30 @@
-@extends('layout.main')
+@extends('layout.master')
 
 @section('title', 'Data Mahasiswa')
 
-@section('container')
-    <div class="container">
-        <div class="row">
-            <div class="col-10">
-                <h1 class="mt-3">Daftar Mahasiswa</h1>
+@section('content')
 
-                <table class="table">
 
-                <thead class="thead-dark">
+    <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Daftar Mahasiswa</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">No</th>
                         <th scope="col">Nama</th>
                         <th scope="col">NIM</th>
                         <th scope="col">Email</th>
                         <th scope="col">Jurusan</th>
                         <th scope="col">Aksi</th>
                     </tr>
-                </thead>
-
-                <tbody>
-                @foreach ($mahasiswa as $mhs)
+                  </thead>  
+                  <tbody>
+                   @foreach ($mahasiswa as $mhs)
                     <tr>
                         <th scope="row">{{ $loop->iteration }}</th>
                         <td>{{ $mhs->nama }}</td>
@@ -34,11 +36,10 @@
                             <a href="" class="badge badge-danger">hapus</a>
                         </td>
                     </tr>
-                @endforeach
-                </tbody>
-
+                   @endforeach
+                  </tbody>
                 </table>
+              </div>
             </div>
-        </div>
-    </div>
+          </div>
 @endsection
